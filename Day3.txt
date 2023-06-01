@@ -3,3 +3,52 @@
 오픈 채팅방
 자바 361
 비번 : 3610900
+
+int num = 1;
+String str1 = "abc";
+String str2 = "abc";
+String str3 = new String("abc");
+문자열을 비교할 때는
+str1.equals(str2);
+-문자열.equals(문자열2);
+
+문제1
+성적을 입력받아 입력받은 성적이 60점 이상인지 확인하는 코드를
+작성하세요.
+예시:
+
+input score :
+
+65
+
+Do you pass 65 point? true
+
+input score :
+
+Do you pass 45 point? false
+
+문제2
+성적을 입력받아 입력받은 성적이 60점 이상인지 확인하는 코드를
+작성하세요.
+예시:
+
+input score :
+
+65
+
+Do you pass 65 point? pass
+
+input score :
+
+Do you pass 45 point? faliure
+
+문제3
+정수 num를 입력받아서 num가 0인지, 음수인지, 양수인지를 판별하는 코드를 if 문을 이용하여 작성하세요.
+
+문제4
+정수 num를 입력받아 num가 홀수인지 짝수인지 판별하는 코드를 작성하세요.
+
+과제
+성별(M:남성,W:여성)을 입력받아 여성인지 확인하는 코드를 작성하세요.
+조건 연산자 이용
+(packa)
