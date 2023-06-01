@@ -19,11 +19,12 @@ public class Ex2_if {
 		String gender = sc.nextLine();
 		String gender1 = "M";
 		String gender2 = "W";
+		String str = gender.equals(gender2) ? "man" : "woman";
 		if(gender.equals(gender1)) {
-			System.out.println("Are you a women? man");
+			System.out.println("Are you a women? " + str);
 		}
         if(gender.equals(gender2)) {
-        	System.out.println("Are you a women? woman");
+        	System.out.println("Are you a women? " + str);
         }
         sc.close();
 	}
