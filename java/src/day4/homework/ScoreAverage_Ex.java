@@ -17,7 +17,7 @@ public class ScoreAverage_Ex {
 		math = sc.nextInt();
 		
 		//평균을 계산
-		avg = (kor + eng + math) / 3.0; //리터럴 값이 있을땐 .0만 붙여도 실수화 가능
+		avg = (kor + eng + math) / 3; //리터럴 값이 있을땐 .0만 붙여도 실수화 가능
 				
 		//평균을 출력
 		System.out.println("avg : " + avg);
