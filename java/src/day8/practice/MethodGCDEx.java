@@ -42,6 +42,6 @@ public class MethodGCDEx {
 				return i;
 			}
 		}
-		return 1;
+		return 1; //반복문이 실행되지 않을 경우가 있어서 가장 의미있는 수를 넣음 ex)최대공약수의 최소값
 	}	
 }
