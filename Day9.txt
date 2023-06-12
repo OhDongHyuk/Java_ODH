@@ -1,0 +1,79 @@
+추상화(어떠한 정보를 관리할 건지)
+
+현실에 있는 정보             =>     클래스
+
+프로그램을 통해 현실에 있는 정보를 관리하기 위해서
+
+고등학생 성적 관리 프로그램
+학생 정보          =>            Student
+이름(O)                            String name                     
+주민번호(O)                       String residentNumber //2000년 생의 경우 int로 하면 앞의 00이 사라지기 때문
+학년(O)                            int grade 
+반(O)                               int classNum
+번호(O)                            int Number
+나이(X)
+생일(X)
+가족관계(X)
+주소(X)
+입학년도(O)                       int admissionYear       
+1학년 1학기 국어성적           Score korScore, engScore, mathScore
+1학년 2학기 국어성적
+1학년 1학기 수학성적
+
+성적              =>              Score
+과목명			String title
+학년			int grade
+학기			int semester
+총점수			double total
+중간			double mid
+기말			double final
+수행평가			double performance
+
+클래스는 맴버변수, 메소드, 생성자로 구성
+멤버변수 : 속성
+메소드 : 기능
+
+자동차
+속력을 올림
+자동차 색상을 검은색
+
+자동차        :        클래스
+속력을 올림  :        메소드
+자동차 색상  :        멤버변수
+공장에서 막 나온
+ 자동차       :        생성자
+
+
+Car                     //자동차
+String name;          //차명
+String company;     //제조사
+int year;               //연식
+int speed;            //속력
+char gear;            //P: 주차 R: 후진 D: 주행 N: 중립
+boolean power;     //전원
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
