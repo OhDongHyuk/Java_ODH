@@ -88,7 +88,7 @@ class Rect1{
 
 class Rect2{
 	//멤버변수
-	private Point leftUp, rightDown;
+	private Point leftUp, rightDown; //PointExA의 Point 사용?
 	
 	//생성자
 	public Rect2(Point leftUp, Point rightDown) {
@@ -122,8 +122,8 @@ class Rect2{
 	 *     10,10            20,20
 	 */
 	public void move(int x, int y) {
-		int dx = leftUp.getX() - x; //getX??
-        int dy = leftUp.getY() - y;
+		int dx = leftUp.getX() - x; //PointEx에 있는 x값을 가져오기 위해 getX를 씀
+        int dy = leftUp.getY() - y; //다시보기
         leftUp.move(x, y);
         rightDown.move(rightDown.getX() - dx, rightDown.getY() - dy);
 	}

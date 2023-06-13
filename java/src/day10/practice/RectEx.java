@@ -14,7 +14,6 @@ public class RectEx {
 		System.out.println("============");
 		Pt1 pt12 = new Pt1(30,40,2,6);
 		pt12.print();
-		
 	}
 }
 class Pt1{
@@ -68,4 +67,5 @@ class Pt1{
 		this.a = a;
 		this.b = b;
 	}
+	
 }
