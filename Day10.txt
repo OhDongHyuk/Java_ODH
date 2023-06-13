@@ -1,0 +1,74 @@
+A a = new A();
+a.변수명1 = 값 1;
+...
+a.변수명10 = 값 10;
+
+A a = new A(값1, ... , 값10); //초기화 편리
+A a = new A(값1, ... , 값5); //일부분만 초기화 가능
+
+class A{
+      public A(){} //생성자(생성자는 리턴타입이 없음!!, 에러 표시 안됨)
+      public void A(){} //A라는 메소드
+}
+
+멤버변수와 메서드 호출
+객체명.멤버변수 = 값; //대체로 특별한 경우만 사용
+객체명.메서드명(매개변수);
+class A{
+
+         public void a(){
+
+         }
+         public void b(){
+
+         }
+
+}
+System.out.println(); //System class 안에 out이라는 객체가 존재 println은 메소드
+
+-정보 은닉
+일반적으로 생성자는 public. 싱글톤의 경우 private
+
+-this(p.170)
+생성자 인스턴스 스스로를 가르키는 예약어
+자신의 주소를 반환한다(p.173)
+주로 생성자나 메소드에서 멤버 변수와 매개변수를 구분할 때 사용
+ - 멤버변수와 매개변수 명이 같은 경우 사용(반드시 this를 사용)
+class A{
+        int A;
+        public void setNum(int num){
+                     this.num=num; //멤버변수 num에 매개변수 num을 저장
+                     sysout(num); //매개변수 num를 출력
+        }
+}
+
+int num = 10;
+num = num; //의미없는 코드
+
+-this()
+생성자가 여러개인 경우 다른 생성자를 호출
+
+-static 변수(p.181)
+하나의 클래스로 만든 모든 객체가 공통적인 값을 가지는 속성이 있는 경우 static을 붙임.
+프로그램이 실행되어 메모리에 올라갔을 때 한번 메모리 공간이 할당.
+클래스 변수라고도 함.(p.185)
+접근제어자 static 자료형 변수명;
+
+class A{
+         int num;
+         int num2;
+         static int num3;
+
+}
+
+static void main(){
+             String name;
+             int grade, classNum, num;  
+
+}
+
+클래스는 필통 같은것!!
+필요한것들을 한데 묶어 다니는것!
+
+자체적인 기능을 추가해서 필요한 기능을 호출할 때 쉽게 호출 가능
+
