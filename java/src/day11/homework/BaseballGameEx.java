@@ -32,29 +32,32 @@ public class BaseballGameEx {
 		for(i = 0; i < 3; i++) {
 			System.out.print(arr2[i] + " ");
 		}
+		
 		System.out.println(" ");
 		for(i = 0; i < 3; i++) {
 			for(int j = 0; j < 3; j++) {
-				if(arr1[i] == arr2[j] || i != j) {
+				if(arr1[i] == arr2[j] && i != j) {
 					ball++;
 				}
+				if(arr1[i] != arr2[j]) {
+					count++;
+				}
+			}
+			if(arr1[i] == arr2[i]) {
+				strike++;
 			}
 		}
-		for(i = 0; i < 3; i++) {
-		 	if(arr1[i] == arr2[i]) {
-		 		strike++;
-		 	}else if(arr1[i] != arr2[i]) {
-		 		count++;
-		 	}else if(count == 3) {
+		if(count == 9) {
 			System.out.println("30");
-			break;
-		 	}
 		}
-		if(count < 3) {	
-			System.out.println(strike + "S" + " " + ball + "B");
+		if(strike != 0) {
+			System.out.print(strike + "S" + " ");
 		}
-		
+		if(ball != 0) {
+			System.out.println(ball + "B");
+		}
 		sc.close();
+		
 	}
 	public static void printArr(int arr[]) {
 		int i;
