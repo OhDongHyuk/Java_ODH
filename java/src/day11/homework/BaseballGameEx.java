@@ -16,26 +16,42 @@ public class BaseballGameEx {
 		// 사용자 : 1 4 9 => 1S 1B
 		// 사용자 : 2 7 4 => 30
 		
-		int [] arr = new int[3];
-				
-		createRandomArray(1, 9, arr);
-		printArr(arr);
+		int [] arr1 = new int[3];
+		int [] arr2 = new int[3];
+		int i, strike = 0, count = 0, ball = 0;		
+		createRandomArray(1, 9, arr1);
+		printArr(arr1);
 		System.out.println("");
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("Input numbers : " );
-		for(int i = 0; i < 3; i++) {
-			arr[i] = sc.nextInt();
+		for(i = 0; i < 3; i++) {
+			arr2[i] = sc.nextInt();
 		}
-		System.out.print("User : ");
-		for(int i = 0; i < 3; i++) {
-			System.out.print(arr[i] + " ");
+		System.out.print("User numbers : ");
+		for(i = 0; i < 3; i++) {
+			System.out.print(arr2[i] + " ");
 		}
-		
-		for(int i = 0; i < 3; i++) {
-			if(random == arr[i]) {
-				System.out.println("S");
+		System.out.println(" ");
+		for(i = 0; i < 3; i++) {
+			for(int j = 0; j < 3; j++) {
+				if(arr1[i] == arr2[j] || i != j) {
+					ball++;
+				}
 			}
+		}
+		for(i = 0; i < 3; i++) {
+		 	if(arr1[i] == arr2[i]) {
+		 		strike++;
+		 	}else if(arr1[i] != arr2[i]) {
+		 		count++;
+		 	}else if(count == 3) {
+			System.out.println("30");
+			break;
+		 	}
+		}
+		if(count < 3) {	
+			System.out.println(strike + "S" + " " + ball + "B");
 		}
 		
 		sc.close();
@@ -76,4 +92,5 @@ public class BaseballGameEx {
 			}
 		}
 	}
+	
 }
