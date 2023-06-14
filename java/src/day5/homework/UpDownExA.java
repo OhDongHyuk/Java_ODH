@@ -12,7 +12,7 @@ public class UpDownExA {
 		Scanner sc = new Scanner(System.in);
 		//랜덤한 수를 생성 (및 출력)
 		random = (int)(Math.random()*(max - min + 1) + min);
-		//반복문 : 맞출때 까지 => 입력한 덪ㅇ수가 정답이 아니면 반복
+		//반복문 : 맞출때 까지 => 입력한 정수가 정답이 아니면 반복
 		while(random != num) {
 			//정수를 입력
 			System.out.println("Input(1~100) : ");
