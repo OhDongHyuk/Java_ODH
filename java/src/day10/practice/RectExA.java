@@ -12,6 +12,11 @@ public class RectExA {
 		r.resize(0, 0, 30, 30);
 		r.print();
 		
+		r.resize(0,10,20,50);
+		r.print();
+		r.move(10,10);
+		r.print();
+		
 		System.out.println("R2 start!");
 		
 		Rect2 r2 = new Rect2(new Point(0,0), new Point(10,10));
@@ -81,7 +86,7 @@ class Rect1{
 		leftUpX = x;
 		leftUpY = y;
 		rightDownX = x + w;
-		rightDownY = x + h;
+		rightDownY = y + h;
 	}
 	
 }

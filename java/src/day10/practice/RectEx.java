@@ -64,6 +64,7 @@ class Pt1{
 	public void move(int x, int y, int a, int b) {
 		this.x = x;
 		this.y = y;
+		
 		this.a = a;
 		this.b = b;
 	}
