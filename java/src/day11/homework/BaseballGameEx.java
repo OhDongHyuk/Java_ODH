@@ -48,7 +48,7 @@ public class BaseballGameEx {
 			}
 		}
 		if(count == 9) {
-			System.out.println("30");
+			System.out.println("3O");
 		}
 		if(strike != 0) {
 			System.out.print(strike + "S" + " ");
