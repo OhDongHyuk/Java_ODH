@@ -84,23 +84,7 @@ public class ArrayRandomEx2 {
 			System.out.println(arr[i]);
 		}
 	}
-	/**정수 num가 배열의 0번지 부터 count개만큼 확인했을 때 중복된 값이 있는지
-	 * 없는지 알려주는 메소드
-	 * 매개변수 : int num, int count, int arr[]
-	 * 리턴타입 : boolean
-	 * 메소드명 : contains
-	 */
-	public static boolean contains(int num, int count) {
-		int i;
-		int arr[] = new int[count];
-		for(i = 0; i < count; i++) {
-			if(num == arr[i]) {
-				break;
-			}
-		}
-		if(num != arr[i]) {
-		}
-	}
+
 	/**정수 num가 배열의 0번지 부터 count개만큼 확인했을 때 중복된 값이 있는지
 	 * 없는지 알려주는 메소드
 	 * 매개변수 : 중복을 확인할 배열, 비교할 정수 num, 비교할 개수 count
