@@ -21,6 +21,7 @@ public class LottoEx {
 		int user[] = new int[6];
 		int min = 1, max = 45;
 		int correct = 0;
+		int bonus = 0;
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -28,11 +29,18 @@ public class LottoEx {
 		Array.printArray(lottoNum);
 		
 		do {
+			int ncount = 0;
 			// 사용자가 숫자 6개를 입력
 			System.out.print("user : ");
 			for(int i = 0; i < user.length; i++) {
 				user[i] = sc.nextInt();
+				ncount++;
 			}
+			if(ncount != user.length) {
+				System.out.println("Error!");
+				continue;
+			}
+			
 			//사용자 입력 체크 ex) 1,1,2
 			if(Array.arrayCheck(user)) {
 				System.out.println("You must not enter the same number!");
@@ -41,9 +49,10 @@ public class LottoEx {
 			
 			//판별
 			//맞은 개수 판별
-			correct=correct(lottoNum, user);
+			correct = correct(lottoNum, user);
+			bonus = bonus(lottoNum, user);
 			
-			printResult(correct);
+			printResult(correct, bonus);
 			
 		}while(correct < 3);
 		System.out.println("Good!");
@@ -66,9 +75,24 @@ public class LottoEx {
 		return count;
 	}
 	
-	public static void printResult(int correct) {
+	public static int bonus(int arr1[], int arr2[]) {
+		if(arr1 == null || arr2 == null) {
+			return 0;
+		}
+		int bonus =0;
+		for(int i = 0; i < arr2.length; i++) {
+			if(arr1[6] == arr2[i]) {
+				bonus++;
+			}
+		}
+		return bonus;
+	}
+	
+	public static void printResult(int correct, int bonus) {
 		if(correct == 6) {
 			System.out.print("1");
+		}else if(correct == 5 && bonus == 1) {
+			System.out.println("2");
 		}else if(correct == 5) {
 			System.out.print("3");
 		}else if(correct == 4) {
