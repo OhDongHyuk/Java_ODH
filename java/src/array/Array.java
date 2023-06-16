@@ -35,9 +35,9 @@ public class Array {
 		if(max < min) {
 			int tmp =max;
 			max = min;
-			min = max;
+			min = tmp;
 		}
-		if(arr == null) {
+		if(arr == null) {//비어있어도 새로운 배열을 만들어서 재생성
 			arr = new int[max - min +1];
 		}
 		if(max - min + 1 < arr.length) {
@@ -77,4 +77,50 @@ public class Array {
 		//반복문이 끝날때까지 중복이 안되면 중복이 안됐다고 리턴
 		return false;
 	}
+	
+	/**정수형 배열이 주어지면 올므차순으로 버블 정령하는 메소드
+	 * 매개변수 : 정수형 배열 => int arr[]
+	 * 리턴타입 : void
+	 * 메소드명 : sort
+	 */
+	public static void sort(int arr[]) {
+		if(arr == null) {
+			return;
+		}
+		for(int i = 0; i < arr.length; i++) {
+			for(int j = 0; j< arr.length-1-i; j++) {
+				if(arr[j] > arr[j+1]) {
+					int tmp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = tmp;
+				}
+			}
+		}
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
