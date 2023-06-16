@@ -10,7 +10,7 @@ public class ArraySortEx {
 	public static void main(String[] args) {
 		// 버블 정렬 예제
 		int arr[] = {1, 4, 7, 9, 2, 8, 3, 6};
-		
+		Array.printArray(arr);
 		//이중 반복문(한 줄, 옆에 와)
 		/*j가 arr.length-1-i인 이유
 		 * => n번지 까지이면 n-1번 비교하기 때문
@@ -18,7 +18,7 @@ public class ArraySortEx {
 		 * => arr[j] > arr[j+1] 에서 부등호 방향이
 		 *    오름차순 내림차순을 정함
 		 * */
-		for(int i = 0; i < arr.length; i++) {
+		for(int i = 0; i < arr.length-1; i++) {
 			for(int j = 0; j< arr.length-1-i; j++) {
 				if(arr[j] > arr[j+1]) {
 					int tmp = arr[j];

@@ -1,0 +1,133 @@
+클래스(변수를 묶어서 관리해 편리함)
+ - 다양한 타입의 변수로 하나의 정보를 나타낼 때 사용
+ - 관리를 편하게 하기 위해
+   => 기능을 가짐
+
+ -정보 : 멤버변수
+ -기능 : 메소드 
+
+//클래스를 쓸 때
+Student studentList[];
+
+//클래스를 안 쓸 때 (관리 불편)
+String name[];
+int grade[];
+String classNum[];
+.....
+
+
+메서드 선언   
+ - 매개변수
+ - 리턴타입
+ - 매개변수
+
+리턴타입 메서드명(매개변수들){
+             구현;
+             return xx;
+}
+
+접근제어자
+ - public       : 전부(공동화장실)
+ - (default)    : 나 + 같은 패키지에 있는 클래스
+ - protected  : 나 + 같은 패키지에 있는 클래스 + 자식 클래스
+ - private      : 나
+
+
+A.java
+pacakage a;
+class A{              <= 생략이니 default
+            int num;
+}
+
+
+ATest.java
+package b;
+public class ATest {
+           public... main();
+                   A a = newA();
+                    a.num = 10; <= 다른 패키지라 사용 불가능
+           } 
+}
+
+-일반적으로 멤버변수의 접근제어자 : private
+  => getter/setter => @Data
+
+-일반적으로 메서드의 접근제어자 : public
+
+class A{
+
+              public void test1(){
+                          test3();
+              }
+               public void test2(){
+                          test3();
+              }
+              //test1과 test2에 공통으로 있는 기능
+               private void test3(){ //이럴때 private
+                         구현;
+              }
+
+}
+
+누구를 멤버변수로?
+A는 B를 가지고 있다로 표현되면 B는 A의 멤버변수
+학생은 이름을 가지고 있다.
+학생은 학년을 가지고 있다.
+학생은 반을 가지고 있다.
+HAS a관계 : 멤버
+
+static
+static 멤버 변수(클래스 멤버변수)
+ - 모든 객체가 공유를 하고, 멤버변수가 1개만 존재(객체가 100개 이더라도 static 멤버는 1개)
+ - 클래스를 통해 호출
+멤버 변수(객체 멤버변수)
+ - 객체가 100개 이면 멤버변수도 100개
+ - 객체를 통해 호출
+
+메소드 오버로딩 : 같은 이름의 메소드가 여러개인 경우
+ - 매개변수가 다르면 됨(변수명 X)
+
+void a(int num1){}
+void a(int num2){}  <= 메소드 오버로딩 안됨
+void a(double num1){}
+void a(int num1, int num){} //둘 다 가능
+
+this : 자신을 가르키는 예약어
+ - 메소드나 생성자에서 매개변수와 멤버변수의 이름이 같을 때 구분하기 위해 반드시 사용
+this() : 같은 클래스에 있는 다른 생성자를 호출할 때 사용
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
