@@ -12,7 +12,6 @@ public class VocabularyNoteEx {
         Word wordList[] = {};
         
         Voca note = new Voca(wordList);
-        Voca2 mote = new Voca2();
         Scanner sc = new Scanner(System.in);
         
 		do {
