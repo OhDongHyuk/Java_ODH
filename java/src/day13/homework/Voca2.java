@@ -1,9 +1,12 @@
-package day12.practice;
+package day13.homework;
 
+import day12.practice.Word;
 import lombok.Data;
 
-@Data //getter, setter, toString, equals를 추가
-public class Word{
+@Data
+public class Voca2 {
+
+	public class Word{
 		//멤버 변수
 		private String title;
 		private String meaning[]; //배열을 여기서 지정
@@ -114,25 +117,4 @@ public class Word{
 	
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}

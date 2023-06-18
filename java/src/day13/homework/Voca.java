@@ -1,12 +1,10 @@
-package day12.practice;
+package day13.homework;
 
-/* 단어장 클래스
- * - 단어들의 모임
- * - Word들의 모임
- * 
- */
+import day12.practice.Word;
+import lombok.Data;
 
-public class VocabularyNote1 {
+@Data
+public class Voca {
 
 	//멤버변수
 	//단어들
@@ -14,11 +12,11 @@ public class VocabularyNote1 {
 	private int wordCount; //저장된 단어의 개수
 		
 	//생성자
-	public VocabularyNote1() {
+	public Voca() {
 		wordList = new Word[10];
 	}
 	
-	public VocabularyNote1(Word wordList[]) {
+	public Voca(Word wordList[]) {
 		//기존 단어장의 크기와 10을 비교해서 큰 수로 단어장 크기를 선택
 		int size = wordList.length > 10 ? wordList.length : 10; 
 		this.wordList = new Word[size];
@@ -27,8 +25,6 @@ public class VocabularyNote1 {
 		}
 		wordCount = wordList.length;
 	}
-	
-	
 	//메소드
 	/**단어들을 출력하는 메소드
 	 * 매개변수 : 없다
@@ -138,7 +134,7 @@ public class VocabularyNote1 {
 		
 		wordList[index].print();
 	}
-	//7
+	//7 -> 이해 안됨
 	/**단어와 수정할 뜻의 번호와 수정할 뜻이 주어지면 단어의 뜻을 수정하는 메소드
 	 * 매개변수 : 단어, 수정할 뜻의 번호, 수정할 뜻
 	 * 			=>String title, int meaningIndex, String meaning
@@ -146,7 +142,7 @@ public class VocabularyNote1 {
 	 * 메소드명 : updateMeaning
 	 */
 	public void updateMeaning(String title, int meaningIndex, String meaning) {
-		
+		//어느 부분에서 단어가 수정되는지 모르겠음
 		int index = indexOf(title);
 		if(index == -1) {
 			System.out.println("No words found");
@@ -157,17 +153,8 @@ public class VocabularyNote1 {
 			System.out.println("Wrong number");
 		}
 	}
-	
+
 	//8
-	/**단어와 수정할 뜻의 번호와 수정할 뜻이 주어지면 단어의 뜻을 삭제하는 메소드
-	 * 매개변수 : 단어, 삭제할 뜻의 번호
-	 * 			=>String title, int meaningIndex
-	 * 리턴타입 : void
-	 * 메소드명 : updateMeaning
-	 */
-	
-	
-	//9
 	/**단어와 수정할 단어가 주어지면 단어를 수정하는 메소드
 	 * 매개변수 : 단어와 수정할 단어가 => String title, String updateTitle
 	 * 리턴타입 : void
@@ -182,4 +169,26 @@ public class VocabularyNote1 {
 		}
 		wordList[index].setTitle(updateTitle);
 	}
+	
+	//9
+	/**단어와 삭제할 뜻의 번호가 주어지면 뜻을 삭제하는 메소드
+	 * 매개변수 : 단어, 삭제할 뜻의 번호
+	 * 			=>String title, int meaningIndex
+	 * 리턴타입 : void
+	 * 메소드명 : deleteMeaning
+	 */
+	public void deleteMeaning(String title, int meaningIndex) {
+		int index = indexOf(title);
+		if(index == -1) {
+			System.out.println("No words found");
+			return;
+		}
+		wordList[index].removeMeaning(meaningIndex);
+	}
 }
+
+
+
+
+
+
