@@ -71,10 +71,10 @@ public class Word{
 		 * 리턴타입 : void
 		 * 메소드명 : removeMeaning
 		 */
-		public void removeMeaning(int num) {
+		public boolean removeMeaning(int num) {
 			if(num > meaningCount || num < 1) {
-				System.out.println("I can't work.");
-				return;
+				//System.out.println("I can't work.");
+				return false;
 			}
 			//num-1번지 부터 하나씩 당겨와서 덮어쓰기함.
 			for(int i = num-1; i < meaningCount - 1; i++) {
@@ -84,6 +84,7 @@ public class Word{
 			meaning[meaningCount-1] = null;
 			//제거 됐으면 뜻 개수를 하나 줄임
 			meaningCount--;
+			return true;
 		}
 		/**수정할 뜻의 번지와 수정할 뜻이 주어지면 뜻을 수정하고 수정 여부를 알려주는 메소드
 		 * 매개변수 : 수정할 뜻의 번지, 수정할 뜻 => int meaningNum, String meaning

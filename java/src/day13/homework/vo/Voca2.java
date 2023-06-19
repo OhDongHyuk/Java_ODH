@@ -1,4 +1,4 @@
-package day13.homework;
+package day13.homework.vo;
 
 import day12.practice.Word;
 import lombok.Data;
@@ -69,15 +69,15 @@ public class Voca2 {
 			this.meaning[meaningCount] = meaning; //n번까지만 뜻을 채우는 방범
 			meaningCount++;
 		}
-		/**뜻을 제거하는 메소드
+		/**뜻을 제거하고 제거여부를 알려주는 메소드
 		 * 매개변수 : 제거할 뜻의 번호 => int num
-		 * 리턴타입 : void
+		 * 리턴타입 : boolean
 		 * 메소드명 : removeMeaning
 		 */
-		public void removeMeaning(int num) {
+		public boolean removeMeaning(int num) {
 			if(num > meaningCount || num < 1) {
-				System.out.println("I can't work.");
-				return;
+				//System.out.println("I can't work.");
+				return false;
 			}
 			//num-1번지 부터 하나씩 당겨와서 덮어쓰기함.
 			for(int i = num-1; i < meaningCount - 1; i++) {
@@ -87,6 +87,7 @@ public class Voca2 {
 			meaning[meaningCount-1] = null;
 			//제거 됐으면 뜻 개수를 하나 줄임
 			meaningCount--;
+			return true;
 		}
 		/**수정할 뜻의 번지와 수정할 뜻이 주어지면 뜻을 수정하고 수정 여부를 알려주는 메소드
 		 * 매개변수 : 수정할 뜻의 번지, 수정할 뜻 => int meaningNum, String meaning
@@ -114,7 +115,29 @@ public class Voca2 {
 		public void setTitle(String title) {
 			this.title = title;
 		}
-	
-	
+		 
+	}
 }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

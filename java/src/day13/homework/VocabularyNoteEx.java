@@ -3,6 +3,7 @@ package day13.homework;
 import java.util.Scanner;
 
 import day12.practice.Word;
+import day13.homework.vo.Voca;
 
 public class VocabularyNoteEx {
 
@@ -10,7 +11,6 @@ public class VocabularyNoteEx {
 		int i = 0;
 		char j;
         Word wordList[] = {};
-        
         Voca note = new Voca(wordList);
         Scanner sc = new Scanner(System.in);
         
@@ -86,7 +86,6 @@ public class VocabularyNoteEx {
 					String d = sc.next();
 					note.search(d);
 				}
-				
 				break;
 				
 			default:
