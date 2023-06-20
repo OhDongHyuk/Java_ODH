@@ -128,7 +128,7 @@ public class VocabularyNoteController {
 		//서브메뉴가 2이면 검색
 		case 2:
 			//검색할 단어
-			System.out.println("검색 단어 : ㄴ");
+			System.out.println("검색 단어 : ");
 			String title = sc.next();
 			//출력
 			note.search(title);
