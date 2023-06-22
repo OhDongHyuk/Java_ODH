@@ -28,6 +28,10 @@ public class Product {
 		this.category = product.category;
 	}
 
+	public Product(String search) {
+		this.name = search;
+	}
+
 	//메서드
 	/**제품 입고 기능 => 현재 수량에 주어진 수량을 누적*/
 	public void store(int amount) {

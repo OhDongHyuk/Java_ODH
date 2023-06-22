@@ -24,6 +24,12 @@ public class Customer {
 		generateCustomerId();//customerId 발급이 완료.
 	}
 
+	public Customer(Customer customer) {
+		this.name = customer.name;
+		this.phoneNumber = customer.phoneNumber;
+		this.customerId = customer.customerId;
+	}
+
 	private void generateCustomerId() {
 		//1 => 00001
 		//1 => "1"
