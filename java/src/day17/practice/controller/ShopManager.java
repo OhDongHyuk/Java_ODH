@@ -200,6 +200,7 @@ public class ShopManager {
 	 * 메서드명 : indexOf
 	 * */
 	public int indexOf(String name) {
+		
 		for(int i = 0; i < count ; i++) {
 			if(list[i].getName().equals(name)) {
 				return i;
