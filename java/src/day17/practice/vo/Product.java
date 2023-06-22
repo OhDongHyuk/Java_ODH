@@ -1,4 +1,4 @@
-package day15.practice.shop.vo;
+package day17.practice.vo;
 
 import lombok.Data;
 

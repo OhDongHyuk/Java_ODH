@@ -1,4 +1,4 @@
-package day15.practice.shop.run;
+package day17.practice.run;
 
 import day15.practice.shop.controller.ShopManager;
 

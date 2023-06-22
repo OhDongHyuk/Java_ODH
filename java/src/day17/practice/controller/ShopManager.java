@@ -1,10 +1,12 @@
-package day15.practice.shop.controller;
+package day17.practice.controller;
 
 import java.util.Scanner;
 
-import day15.practice.shop.vo.Customer;
-import day15.practice.shop.vo.Product;
-import day15.practice.shop.vo.Sales;
+import day17.practice.service.ShopService;
+import day17.practice.service.ShopServiceImp;
+import day17.practice.vo.Customer;
+import day17.practice.vo.Product;
+import day17.practice.vo.Sales;
 
 public class ShopManager {
 
@@ -16,6 +18,8 @@ public class ShopManager {
 	private Sales salesHistory[] = new Sales[100];//판매 기록
 	private int salesCount;//기록된 판매수
 	private int totalPrice;//매출 금액
+	
+	private ShopService shopService= new ShopServiceImp();
 	
 	public void run() {
 		System.out.println("프로그램 시작!!");
@@ -57,7 +61,13 @@ public class ShopManager {
 			sell();
 			break;
 		case 2:
-			store();
+			//입고할 제품정보를 입력받아 제품 객체를 생성
+			Product product = inputStoreProduct();
+			//제품 리스트와 제품 수, 입고된 제품을 주고, 제품 입고를 관리하라고 시킴
+			//새 제품이 입고된 경우 제품 리스트에 추가 되고 제품수가 1 증가해야하기 때문에
+			count = shopService.store(list, count, product);
+			list;//바뀜
+			count;//안바뀜
 			break;
 		case 3:	
 			printProduct();
@@ -131,7 +141,7 @@ public class ShopManager {
 		System.out.println("없는 제품!");
 	}
 
-	private void store() {
+	private Product inputStoreProduct() {
 		
 		//입고할 제품명 입력
 		System.out.print("제품명 : ");
@@ -144,7 +154,7 @@ public class ShopManager {
 		
 		if(amount < 0) {
 			System.out.println("입고 수량 오류!");
-			return;
+			return null;
 		}
 		
 		//제품 리스트에서 입고할 제품명이 있는지 찾음
@@ -155,16 +165,16 @@ public class ShopManager {
 		//있으면 입고할 제품 수량 만큼 해당 제품에 입고
 		//위치가 0이상이면 
 		if(index != -1) {
-			list[index].store(amount);
-			System.out.println("입고 완료!");
-			return;
+			Product product = new Product(list[index]);
+			product.setAmount(amount);
+			return product;
 		}
 		//없으면 제품 리스트에 제품 정보를 추가(입고할 수량도 함께)
 		//위치가 -1이면
 		//최대치로 등록되어 있으면
 		if(count == list.length) {
 			System.out.println("제품 리스트 다참!");
-			return;
+			return null;
 		}
 		//모델명 입력
 		System.out.println("새 제품 등록");
@@ -178,10 +188,9 @@ public class ShopManager {
 		System.out.print("분류  : ");
 		String category = sc.next();
 		
-		//제품 리스트에 추가
-		list[count++] = new Product(name, modelName, price, amount, category);
+		Product product = new Product(category, category, price, price, category);
 		
-		System.out.println("제품 추가 후 입고 완료!");
+		return product;
 	}
 
 	/**제품 리스트에 제품명과 일치하는 제품이 있으면 번지를, 없으면
