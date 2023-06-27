@@ -1,0 +1,13 @@
+classs Student{
+	int grade, classNum, num;
+	String name;
+	Object kor; //T=제네릭 클래스(타입이 고정되어 있지 않음)
+}
+
+Student std = new Student();
+std.kor = 10; //박싱 => 업캐스팅
+int num = (Integer)std.kor;//언박싱
+
+Student<Integer>std = new Student();
+std.kor = 10;
+int num = std.kor;
