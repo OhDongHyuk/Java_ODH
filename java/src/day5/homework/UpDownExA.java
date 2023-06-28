@@ -6,7 +6,7 @@ public class UpDownExA {
 
 	public static void main(String[] args) {
 		
-		int min = 1, max =100;
+		int min = 1, max = 100;
 		int num = min - 1;//1~100이 아닌 정수로 초기화 하면 됨. 최소값 -1을 해서 랜덤으로 나올 수 없는 수
 		int random;
 		Scanner sc = new Scanner(System.in);
