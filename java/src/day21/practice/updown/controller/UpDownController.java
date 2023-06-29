@@ -83,7 +83,7 @@ public class UpDownController implements Program {
 			count = 0;
 			
 			while(r != num) {
-								System.out.print("Input number : ");
+				System.out.print("Input number : ");
 				num = sc.nextInt();
 				
 				if(num > r) {
@@ -95,20 +95,21 @@ public class UpDownController implements Program {
 				}
 				count++;
 			}
-			System.out.print("Insert Id :");
-			id = sc.next();
 			
-			RecordGame rec = new RecordGame(id, count);
-			list.add(rec);
-			//sort();
-			list.sort(new Comparator<RecordGame>() {
-
-				@Override
-				public int compare(RecordGame o1, RecordGame o2) {
-					return o1.getCount() - o2.getCount();
-				}
-			});
-					
+				System.out.print("Insert Id :");
+				id = sc.next();
+				
+				RecordGame rec = new RecordGame(id, count);
+				list.add(rec);
+				//sort();
+				list.sort(new Comparator<RecordGame>() {
+	
+					@Override
+					public int compare(RecordGame o1, RecordGame o2) {
+						return o1.getCount() - o2.getCount();
+					}
+				});
+							
 			
 		}
 		
