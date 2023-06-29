@@ -66,7 +66,16 @@ public class StudentManger4 implements Program {
 			System.out.print("grade : ");
 			final int grade1 = sc.nextInt();
 			stream
-				.filter(std -> std.getGrade() ==  grade1)
+			/* filter는 매개변수로 Predicate 인터페이스와 객체가 필요
+			 * Predicate를 구현한 익명 클래스를 람다식으로 만든 후에 객체를 생성해서 전달
+			 * */
+				.filter(std -> std.getGrade() ==  grade1)//std는 매개변수 이름이라 뭘 써도 상관없음
+				//.filter(new Predicate<Student>() {
+				//     @Override
+				//		public boolean test(Student t) {
+				//			return t.getGrade() == grade1;
+				//		}
+				//})
 				.forEach(std -> System.out.println(std));
 			break;
 		case 3:
