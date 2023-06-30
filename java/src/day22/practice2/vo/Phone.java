@@ -5,6 +5,8 @@ import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+
+//한 사람의 전화번호
 @Data
 @AllArgsConstructor
 public class Phone {
