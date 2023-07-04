@@ -1,12 +1,17 @@
 package quiz.test12.controller;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import homework.phone.day23.vo.PhoneBook;
 import quiz.test12.vo.Student;
 
 public class StudentProgram implements Program{
@@ -14,10 +19,11 @@ public class StudentProgram implements Program{
 	private Scanner sc = new Scanner(System.in);
 	private final static int EXIT = 3;
 	private ArrayList<Student> list = new ArrayList<>();
+	private Student st = new Student(0, null, null);
 	
 	@Override
 	public void printMenu() {
-		inPut();
+		
 		System.out.println("1. 학생 등록");
 		System.out.println("2. 학생 확인");
 		System.out.println("3. 종료");
@@ -27,6 +33,7 @@ public class StudentProgram implements Program{
 	@Override
 	public void run() {
 		int menu;
+		load();
 		do {
 			System.out.println("===========");
 			printMenu();
@@ -34,6 +41,7 @@ public class StudentProgram implements Program{
 			runMenu(menu);
 			System.out.println("===========");
 		}while(menu != EXIT);
+		save();
 		
 	}
 
@@ -42,7 +50,6 @@ public class StudentProgram implements Program{
 		switch(menu) {
 		case 1:
 			insertStudent();
-			outPut();
 			break;
 		case 2:
 			printAll();
@@ -81,26 +88,31 @@ public class StudentProgram implements Program{
 		
 	}
 	
-	private void outPut() {
-		try(FileWriter fos = new FileWriter("output1.txt")) {
-			fos.write(list);
-		}catch (IOException e) {
+	@Override
+	public void load() {
+		try(FileInputStream fis = new FileInputStream("text.txt");
+			ObjectInputStream ois = new ObjectInputStream(fis)){
+
+			st = (Student)ois.readObject();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 	}
-	
-	private void inPut() {
-		try(FileReader fis = new FileReader("output1.txt")) {
-		int data;
-		while((data = fis.read()) != -1) {
-			System.out.println((char)data);
-		}
-		}catch (FileNotFoundException e) {
-			System.out.println("File not found");
+
+	@Override
+	public void save() {
+		try(FileOutputStream fos = new FileOutputStream("text.txt");
+			ObjectOutputStream oos = new ObjectOutputStream(fos)){
+			oos.writeObject(st);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 	}
 
 }

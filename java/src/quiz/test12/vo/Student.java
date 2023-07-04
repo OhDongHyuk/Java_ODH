@@ -6,6 +6,8 @@ import lombok.Data;
 
 @Data
 public class Student {
+	private static final long serialVersionUID = 6914872964580259399L;
+	
 	int studentNum;
 	String studentR;
 	String name;
