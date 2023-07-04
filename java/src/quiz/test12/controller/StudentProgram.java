@@ -1,5 +1,9 @@
 package quiz.test12.controller;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,6 +17,7 @@ public class StudentProgram implements Program{
 	
 	@Override
 	public void printMenu() {
+		inPut();
 		System.out.println("1. 학생 등록");
 		System.out.println("2. 학생 확인");
 		System.out.println("3. 종료");
@@ -37,6 +42,7 @@ public class StudentProgram implements Program{
 		switch(menu) {
 		case 1:
 			insertStudent();
+			outPut();
 			break;
 		case 2:
 			printAll();
@@ -73,6 +79,28 @@ public class StudentProgram implements Program{
 		}
 		System.out.println("Insert Fail!");
 		
+	}
+	
+	private void outPut() {
+		try(FileWriter fos = new FileWriter("output1.txt")) {
+			fos.write(list);
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	private void inPut() {
+		try(FileReader fis = new FileReader("output1.txt")) {
+		int data;
+		while((data = fis.read()) != -1) {
+			System.out.println((char)data);
+		}
+		}catch (FileNotFoundException e) {
+			System.out.println("File not found");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
