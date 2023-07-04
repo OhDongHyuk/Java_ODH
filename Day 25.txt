@@ -1,0 +1,190 @@
+//Test1.java
+public class Test1 {
+	public static void main(String[] args) {
+		ArrayList<Point> list = new ArrayList<>();
+		list.add(new Point(1,2));
+		list.add(new Point(x,y)); //인트 값이 와야함	
+  		list.add((3,4));
+	}
+}
+
+//Point.java
+public class Point{
+	int x,y;
+	public Point(int x, int y) {
+		x = x;
+		y = y;
+	}
+}
+
+public class Test2 {
+	public static void main(String[] args) {
+		ArrayList<integer> list = new ArrayList<>();
+		list.add(1);
+		list.add(2);
+	}
+}	
+
+//
+public class Test3 {
+
+	public static void main(String[] args) {
+		List<Integer> list = new HashSet<>();
+		list.add(3);
+		list.add((int)4);
+		list.add((integer)5);
+	}
+}
+
+public class Test4 {
+
+	public static void main(String[] args) {
+		//num가 짝수인지 홀수인지 판별하는 예제
+		int num = 3;
+		
+		if(num % 2 == 0) {
+			System.out.println("짝수");
+		}else {
+			System.out.println("홀수");
+		}
+	}
+
+}
+
+public class Test5 {
+
+	public static void main(String[] args) {
+		Set<Integer> set = new HashSet<>();
+		set.add(1);
+		set.add(2);
+		for(int i = 0; i<set.size(); i++) {
+			System.out.println(set.get(i));
+		}
+	}
+
+}
+
+public class Test6 {
+
+	public static void main(String[] args) {
+		//평균 예제
+		int kor = 100, eng = 90, math = 34;
+		double avg = (kor + eng + math)/3.0;
+		System.out.println("평균 : " + avg);
+	}
+
+}
+
+public class Test7 {
+
+	public static void main(String[] args) {
+		System.out.println(sum(10,20));
+		System.out.println(sum(10.4,12.2));
+	}
+	public static int sum(int num1, int num2) {
+		return num1 + num2;
+	}
+	public static double sum(double num1, double num2) {
+		return num1 + num2;
+	}
+}
+
+
+public class Test8 {
+
+	public static void main(String[] args) {
+		int num = 3;	
+		System.out.println(num + "는 짝수인가? " + isEven(num));
+	}
+	
+	//홀짝을 판별하는 메서드
+	public static String isEven(int num) {
+		if(num % 2 == 0) {
+			return true;
+		}
+	}
+}
+
+public class Test10 {
+
+	public static void main(String[] args) {
+		PhoneNumber pn1 = new PhoneNumber("Hong", null);
+		PhoneNumber pn2 = new PhoneNumber(null, null);
+	}
+
+}
+
+class PhoneNumber{
+	private String name, number;
+	
+	public PhoneNumber(String name, String number) {
+		this.name = name;
+		this.number = number;
+	}
+	@Override
+	public String toString(String str) {
+		str = "이름 : " + name + ",번호 : " + number;
+		return str;
+	}
+}
+
+public class Test11 {
+
+	public static void main(String[] args) {
+		TestProgram tp = new TestProgram();
+		tp.run();
+	}
+
+}
+interface Program{
+	void run();
+}
+class TestProgram implements Program{
+	
+	int num;
+	
+	void run() {
+		System.out.println(num);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
