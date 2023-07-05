@@ -6,19 +6,19 @@ import java.util.Objects;
 import lombok.Data;
 
 @Data
-public class Book implements Serializable{
+public class Book implements Serializable {
 	
 	private static final long serialVersionUID = 7054033506087668340L;
-	//도서번호 : 도서관에서 지정
+	//도서번호 : 도서관에서 지정, 
 	//도서명, 저자, isbn
 	private String num, title, author, isbn;
-	private boolean loanBook;//대출 여부
+	private boolean loan;//대출 여부
 	
 	public String toString() {
-		return "도서번호 : " + num + "\n" +
+		return 	"도서번호 : " + num + "\n" +
 				"도서제목 : " + title + "\n" +
 				"도서저자 : " + author + "\n" +
-				"ISBN : " + isbn;
+				"ISBN   : " + isbn;
 	}
 
 	public Book(String num, String title, String author, String isbn) {
@@ -28,10 +28,10 @@ public class Book implements Serializable{
 		this.isbn = isbn;
 	}
 	public void loanBook() {
-		this.loanBook = true; //setLoan(true);
+		this.loan = true; //setLoan(true);
 	}
 	public void returnBook() {
-		this.loanBook = false; //setLoan(false);
+		this.loan = false;//setLoan(false);
 	}
 
 	@Override
@@ -52,32 +52,6 @@ public class Book implements Serializable{
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

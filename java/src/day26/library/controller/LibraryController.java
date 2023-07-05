@@ -105,7 +105,7 @@ public class LibraryController {
 		//Stream<Book> stream = bookList.stream();
 		bookList
 			.stream()	
-			.filter(b->!b.isLoanBook()) //대출가능한 도서만 추출
+			.filter(b->!b.isLoan()) //대출가능한 도서만 추출
 			.forEach(b->{//추출한 도서를 출력
 			System.out.println("===========");
 			System.out.println(b);
@@ -113,7 +113,7 @@ public class LibraryController {
 		});
 		/*
 		for(Book tmp : bookList) {
-			if(!tmp.isLoanBook())
+			if(!tmp.isLoan())
 				System.out.println("===========");
 				System.out.println(b);
 				System.out.println("===========");
@@ -133,7 +133,7 @@ public class LibraryController {
 		boolean possible 
 			= bookList
 				.stream()
-				.filter(b -> !b.isLoanBook() && b.getNum().equals(num))
+				.filter(b -> !b.isLoan() && b.getNum().equals(num))
 				.count() > 0;
 		//올바르지 않으면(없는 도서번호이거나, 대출중인 도서인 경우)
 		//대출할 수 없다고 알림.
@@ -149,7 +149,7 @@ public class LibraryController {
 		= new LoanBrowsing(bookList.get(index), loanDate, 14);
 		//대출열람 리스트에 추가
 		loanList.add(lb);
-		bookList.get(index).loanBook();//도서에 대출했다고 수정
+		bookList.get(index).loanBook();
 		//대출일을 출력
 		System.out.println("대출일 : " + lb.getLoanDateStr());
 		//반납예정일 출력

@@ -6,13 +6,13 @@ import java.util.Date;
 
 import lombok.Data;
 
-//대출 열람(도서대출)
+//대출 열람(도서대출 기록)
 @Data
-public class LoanBrowsing implements Serializable{
-	 
-	private static final long serialVersionUID = 6706783338241921803L;
+public class LoanBrowsing implements Serializable {
 
-	private Book book;//대출도서
+	private static final long serialVersionUID = 4272632230761810647L;
+
+	private Book book;//대출 도서
 	private Date loanDate;//대출일
 	private Date returnDate;//반납일
 	
@@ -25,44 +25,8 @@ public class LoanBrowsing implements Serializable{
 		SimpleDateFormat format = new SimpleDateFormat("yyyy년 MM월 dd일");
 		return format.format(loanDate);
 	}
+	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

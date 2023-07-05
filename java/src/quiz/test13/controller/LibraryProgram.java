@@ -8,17 +8,18 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-import quiz.test13.vo.Book;
+import quiz.test13.vo.Book2;
 import quiz.test13.vo.BookRentalList;
 
 public class LibraryProgram implements Program {
 	
 	private Scanner sc = new Scanner(System.in);
 	private static final int EXIT = 4;
-	private List<Book> list = new ArrayList<>();
+	private List<Book2> list = new ArrayList<>();
 	private List<BookRentalList> rentalList = new ArrayList<>();
 	
 	@Override
@@ -28,7 +29,6 @@ public class LibraryProgram implements Program {
 		String rentalFileName = "src/quiz/test13/rentalBook.txt";
 		load(fileName);
 		rentalLoad(rentalFileName);
-		System.out.println(list);
 		do {
 			System.out.println(list);
 			System.out.println(rentalList);
@@ -121,8 +121,8 @@ public class LibraryProgram implements Program {
 		System.out.print("반납할 책의 번호를 입력해 주세요 : ");
 		final String bookNum = sc.nextLine();
 	
-		Book book = new Book(bookName, bookWriter, bookIsbn, bookNum);
-		BookRentalList rentalBook = new BookRentalList(bookName, bookWriter, bookIsbn, bookNum, null, null);
+		Book2 book = new Book2(bookName, bookWriter, bookIsbn, bookNum);
+		BookRentalList rentalBook = new BookRentalList(book, null, 0);
 		
 		if(rentalList.contains(rentalBook)) {
 			list.add(book);
@@ -136,21 +136,20 @@ public class LibraryProgram implements Program {
 
 	private void bookRental() {
 		sc.nextLine();
-		System.out.print("대출할 책 제목을 입력해 주세요 : ");
-		final String bookName = sc.nextLine();
-		System.out.print("대출할 저자의 이름을 입력해 주세요 : ");
-		final String bookWriter = sc.nextLine();
-		System.out.print("대출할 책의 isbn 번호를 입력해 주세요 : ");
-		final String bookIsbn = sc.nextLine();
 		System.out.print("대출할 책의 번호를 입력해 주세요 : ");
-		final String bookNum = sc.nextLine();
-	
-		Book book = new Book(bookName, bookWriter, bookIsbn, bookNum);
-		BookRentalList rentalBook = new BookRentalList(bookName, bookWriter, bookIsbn, bookNum, null, null);
-		int tmp = list.indexOf(book);
-		if(tmp != -1) {
-			rentalList.add(rentalBook);
-			list.remove(tmp);
+		String bookNum = sc.nextLine();
+			
+		int index = list.indexOf(new Book2(null,null,null,bookNum));
+		
+		
+		if(index != -1 ) {
+			Date loanDate = new Date();
+			BookRentalList lb 
+			= new BookRentalList(list.get(index), loanDate, 14);
+			rentalList.add(lb);
+			list.get(index).loanBook();
+			
+			System.out.println("대출일 : " + lb.getLoanDateStr());
 			System.out.println("대출이 완료 되었습니다.");
 			return;
 		}
@@ -170,8 +169,8 @@ public class LibraryProgram implements Program {
 		System.out.print("등록할 책의 번호를 입력해 주세요 : ");
 		String bookNum = sc.nextLine();
 		
-		Book book = new Book(bookName, bookWriter, bookIsbn, bookNum);
-		BookRentalList rentalBook = new BookRentalList(bookName, bookWriter, bookIsbn, bookNum, null, null);
+		Book2 book = new Book2(bookName, bookWriter, bookIsbn, bookNum);
+		BookRentalList rentalBook = new BookRentalList(book, null, 0);
 		
 		if(!list.contains(book) && !rentalList.contains(rentalBook)) {
 			list.add(book);
@@ -187,7 +186,7 @@ public class LibraryProgram implements Program {
 	public void save(String fileName) {
 		try(FileOutputStream fos = new FileOutputStream(fileName);
 			ObjectOutputStream oos = new ObjectOutputStream(fos)){
-				for(Book tmp : list) {
+				for(Book2 tmp : list) {
 					oos.writeObject(tmp); //학생정보를 하나씩 찍어주기
 				}
 		} catch (IOException e) {
@@ -200,7 +199,7 @@ public class LibraryProgram implements Program {
 		try(ObjectInputStream ois 
 			= new ObjectInputStream(new FileInputStream(fileName))){
 			while(true) {
-				Book tmp = (Book)ois.readObject();
+				Book2 tmp = (Book2)ois.readObject();
 				list.add(tmp);
 			}
 		} catch (FileNotFoundException e) {
