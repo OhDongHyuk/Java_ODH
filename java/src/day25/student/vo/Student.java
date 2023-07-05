@@ -1,11 +1,13 @@
 package day25.student.vo;
 
-public class Student {
+import java.io.Serializable;
 
+public class Student implements Serializable {
+
+	private static final long serialVersionUID = -1534984605875676285L;
 	private String num, name, major;
 		
 	public Student(String num, String name, String major) {
-		super();
 		this.num = num;
 		this.name = name;
 		this.major = major;
