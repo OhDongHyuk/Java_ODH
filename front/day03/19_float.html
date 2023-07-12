@@ -6,17 +6,18 @@
 	<title>float 예제</title>
 	<style>
 		/* 
-		float 속성을 적용하면 다른 요소들과 따로 놈.
-		*/
+		float
+		- float 속성을 적용하면 다른 요소들과 따로 놈.
+		 */
 		.box{
 			width: 100px; height: 100px; background-color: yellow;
-			float:left;
+			float: left;
 			/* display: inline-block; */
 		}
 		.box2{ height: 50px; float: right;}
-		/* float 요소가 적용된 부모 요소에 ::after를 추가하여 아래 코드를 추가 */
-		container::after{
-			clear: right; content: ''; display: block;
+		/* float요소가 적용된 부모 요소에 ::after를 추가하여 아래 코드를 추가 */
+		.container::after{
+			clear: both; content: ''; display: block;
 		}
 	</style>
 </head>

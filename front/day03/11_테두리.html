@@ -6,15 +6,15 @@
 	<title>테두리 예제</title>
 	<style>
 		.box1{
-			height : 50px;
+			height: 50px;
 			border-top-style: solid;
 			border-right-style: dashed;
 			border-bottom-style: double;
 			border-left-style: dotted;
-			/* top->right->bottom->left */
-			/* 각 값이 다른 경우 각각 사용 */ 
+			/* top->rigth->bottom->left */
+			/* 각 값이 다른 경우 각각 사용 */
 			border-style: solid dashed double dotted;
-			/* 위는 solid, 오른쪽, 왼쪽은 dashed, 아래는 double */ 
+			/* 위는 solid, 오른쪽, 외쪽은 dashed, 아래는 double */
 			border-style: solid dashed double;
 			/* 위아래는 solid, 좌우는 dashed */
 			border-style: solid dashed;
@@ -25,7 +25,8 @@
 		}
 		.box2{
 			height: 50px;
-			/* border-top-style, border-top-width, border-top-color를 합친 속성 */
+			/* border-top-style, border-top-width, border-top-color
+			를 합친 속성 */
 			border-top: 10px solid red;
 			border-right: 5px dashed blue;
 			border-bottom: 10px double green;
@@ -35,24 +36,17 @@
 		}
 		/* box3에 위를 뺀 나머지는 5px solid blue이고,
 		위 테두리는 5px solid green일 때 스타일을 적용하세요. */
-		/*
-		border-radius 왼쪽 위 부터 시계방향
+		/* 
+		border-radius : 둥근 테두리
+		- 왼쪽위부터 시계방향
 		*/
 		.box3{
-			height: 50px;
 			border: 5px solid blue;
 			border-top-color: green;
-			border-radius: 10px 20px 30px 40px;
-		}		
-		/*
-		.box3{
 			height: 50px;
-			border-top: 5px solid green; 
-			border-right: 5px solid blue; 
-			border-left: 5px solid blue; 
-			border-bottom: 5px solid blue; 
+			border-radius: 10px 20px 30px 40px;
 		}
-		*/
+		/* border-radius를 이용하여 원 그리기 */
 		.box4{
 			width: 100px; height: 100px; border: 5px solid red;
 			border-radius: 50%;

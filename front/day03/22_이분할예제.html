@@ -5,20 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>이분할 예제</title>
 	<style>
-		.container{
-			width: 500px;
-			border: 3px solid red;
-		}
-		.box{
-			width: 50%; height: 250px;
-			background-color: blue;
+		.container{ width: 500px; border: 3px solid red;}
+		.box{ 
+			width: 50%; height: 250px; background-color: blue;
 			float: left;
 		}
-		.box1{background-color: black;}
+		.box1{ background-color: black;}
 		.container::after{
-			content:''; display: block; clear:both
+			content: ''; display: block; clear: both;
 		}
-	
 	</style>
 </head>
 <body>
