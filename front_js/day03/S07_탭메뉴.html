@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+</head>
+<body>
+	<button class="box1">빨강</button>
+	<button class="box2">파랑</button>
+	<button class="box3">노랑</button>
+	<div class="box"></div>
+	<script>
+		$('.box1').click(function(){
+			$('.box').css({
+				'border' : '3px solid red'
+				,'height' : '300px'		
+			});
+		});
+		$('.box2').click(function(){
+			$('.box').css({
+				'border' : '3px solid blue'
+				,'height' : '300px'		
+			});
+		});
+		$('.box3').click(function(){
+			$('.box').css({
+				'border' : '3px solid yellow'
+				,'height' : '300px'		
+			});
+		});
+	</script>
+</body>
+</html>
