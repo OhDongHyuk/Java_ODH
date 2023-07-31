@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>클릭 예제</title>
+	<script src="../js/jquery.min.js"></script>
+</head>
+<style>
+	.color{
+		background: yellow;
+	}
+</style>
+<body>
+	<!-- 1. 클릭 했을때 안녕하세요가 출력되게 만드시오. -->
+	<!-- <button class="btn">클릭</button> -->
+	<script>
+		//안에서 this가 나오는 경우 애로우 함수()=>{}는 사용불가
+		$('.btn').click(()=>alert('안녕하세요'));
+	</script>
+	<!-- 2. 리스트로 항목 1,2,3을 만들고 밑에 버튼을 만들어서 버튼1을 클릭하면 항목1의
+	 				배경색이 노란색이 되도록 만드시오 -->
+	<!-- 3. 위 문제에 버튼 2,3을 추가하고 각 버튼을 클릭할때 그 버튼만 배경색이 노란색이
+					되도록 만드시오. -->
+	<div class="color"></div>
+	<div class="container">
+		<ul class="list-menu">
+			<li class="list list-menu1">항목1</li>
+			<li class="list list-menu2">항목2</li>
+			<li class="list list-menu3">항목3</li>
+		</ul>
+		<nav>
+			<button class="btn btn-menu1">버튼1</button>
+			<button class="btn btn-menu2">버튼2</button>
+			<button class="btn btn-menu3">버튼3</button>
+		</nav>
+	</div>
+	<script>
+		/*
+		$('.btn-menu1').click(function(){
+			$('.list').removeClass('color');
+			//$('.list-menu1').css({'background':'yellow'}); //css({})
+			$('.list-menu1').addClass('color');
+		});
+		$('.btn-menu2').click(function(){
+			$('.list').removeClass('color');
+			$('.list-menu2').addClass('color');
+		});
+		$('.btn-menu3').click(function(){
+			$('.list').removeClass('color');
+			$('.list-menu3').addClass('color');
+		});
+		*/
+		$('.btn').click(function(){
+			$('li').css('background-color','white');
+			//눌린 버튼이 .btn 중 몇번쨰인지 가져옴
+			let index = $(this).index()-1;
+			$('li').eq(index).css('background-color','yellow');
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		.bg-yellow{ background-color: yellow; }
+		.bg-orange{ background-color: orange; }
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="item-menu item-menu1">항목1</li>
+		<li class="item-menu">항목2</li>
+		<li class="item-menu">항목3</li>
+		<li class="item-menu">항목4</li>
+		<li class="item-menu">항목5</li>
+		<li class="item-menu">항목6</li>
+		<li class="item-menu item-menu7">항목7</li>
+	</ul>
+	<button class="btn">버튼1</button>
+	<button class="btn">버튼2</button>
+	<button class="btn">버튼3</button>
+	<button class="btn">버튼4</button>
+	<button class="btn">버튼5</button>
+	<button class="btn">버튼6</button>
+	<button class="btn">버튼7</button>
+	<br>
+	<button class="btn-prev">이전</button>
+	<button class="btn-next">다음</button>
+	<script>
+		let num = 0;
+		$('.btn').each((index,element)=>{
+			$(element).click(function(){
+				$('li').removeClass('bg-yellow');
+				$('li').removeClass('bg-orange');
+				let index = $(this).index()-1;
+				num = index;		
+				$('li').eq(num-1).addClass('bg-orange');					
+				$('.item-menu7').click().removeClass('bg-orange');			
+				$('li').eq(num).addClass('bg-yellow');				
+				$('li').eq(num+1).addClass('bg-orange');	
+			});
+		});
+		//방법2. 앞에 요소/뒤에 요소가 있는지 없는지 확인해서 이동		
+		$('.btn-prev').click(()=>{
+			let index;
+			if($('.bg-yellow').prev().length != 0){				
+				index = $('.bg-yellow').prev().index();
+			}else{
+				index = $('li').length - 1;
+			}
+			$('.btn').eq(index).click();
+		});
+		$('.btn-next').click(()=>{
+			let index;
+			if($('.bg-yellow').next().length != 0){				
+				index = $('.bg-yellow').next().index();
+			}else{
+				index = 0;
+			}
+			$('.btn').eq(index).click();
+		});
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+</head>
+<body>
+	ID : <input type="text" id="id"><br>
+	PW : <input type="text" id="pw"><br>
+	PWC : <input type="text" id="pwc"><br>
+	E-mail ; <input type="text" id="e-mail"><br>
+	<div class="box"></div>
+	<script>
+		let regexId = /^[a-zA-Z0-9]\w{7,12}$/;
+		$('#id').change(function(){
+			let text = $(this).val();
+			if(regexId.test(text)){
+				$('.box').text('올바른 아이디 입니다.');
+			}else{
+				$('.box').text('영문숫자 8~13자 입력하세요.');
+			}
+		});
+		let regexPw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
+		$('#pw').change(function(){
+			let text1 = $(this).val();
+			if(regexPw.test(text1)){
+				$('.box').text('올바른 비밀번호 입니다.');
+			}else{
+				$('.box').text('영문,숫자,특수문자 8~20자 입력하세요.');
+			}
+		});
+		let regexPwc = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
+		
+		$('#pwc').change(function(){
+			let text2= $(this).val();
+			if(regexPw == regexPwc ){
+				$('.box').text('비밀번호 확인이 완료 되었습니다.');
+			}else{
+				$('.box').text('비밀번호가 서로 다릅니다.');
+			}
+		});
+		let regexE = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;	
+		$('#e-mail').change(function(){
+			let text3 = $(this).val();
+			if(regexE.test(text3)){
+				$('.box').text('올바른 이메일 입니다.');
+			}else{
+				$('.box').text('올바른 형식의 이메일을 입력해 주십시오.');
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+</head>
+<body>
+	<ul>
+		<li class="item-menu">항목1</li>
+		<li class="item-menu">항목2</li>
+		<li class="item-menu">항목3</li>
+	</ul>
+	<button class="btn">버튼1</button>
+	<button class="btn">버튼2</button>
+	<button class="btn">버튼3</button>
+
+	<button class="bn before">이전</button>
+	<button class="bn next">다음</button>
+	<script>
+		$('.btn').each((index,element)=>{
+			$(element).click(function(){
+				$('li').css('background-color','white');
+				$('li').eq(index).css('background-color','yellow');
+				page = $(this).index() + 1;
+				drawPage(page);
+			});
+		});
+		let page = 1;
+		const MAX_PAGE = $('.item-menu').length;
+	
+		$('.before').click(function(){
+			page = --page == 0 ? MAX_PAGE : page;
+			$('.item-menu').eq(page - 1).click();
+			$('li').css('background-color','white');		
+			$('li').eq(page-1).css('background-color','yellow');	
+		});
+		$('.next').click(function(){
+			page = ++page > MAX_PAGE ? 1 : page;
+			$('.item-menu').eq(page - 1).click();
+			$('li').css('background-color','white');		
+			$('li').eq(page-1).css('background-color','yellow');	
+		});
+		function drawPage(page){
+			$('.page-current').text(page);
+		}
+		/*$('.before').click(function(){
+			$('.btn').each((index,element)=>{
+				$('li').css('background-color','white');		
+				$('li').eq(page-1).css('background-color','yellow');				
+			});
+		});*/
+	</script>
+</body>
+</html>
