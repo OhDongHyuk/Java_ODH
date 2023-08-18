@@ -1,15 +1,11 @@
 package day21.practice.updown.run;
 
-import java.util.HashSet;
-import java.util.Scanner;
-
-import day21.practice.updown.controller.UpDownController;
+import day21.practice.updown.controller.GameManager;
 
 public class UpDownEx {
 
 	public static void main(String[] args) {
-			
-		UpDownController sc = new UpDownController();
-		sc.run();
+		GameManager gm = new GameManager();
+		gm.run();
 	}
 }

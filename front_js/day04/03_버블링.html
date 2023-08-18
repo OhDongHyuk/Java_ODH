@@ -7,7 +7,6 @@
 	<script src="../js/jquery.min.js"></script>
 	<style>
 		ul{list-style: none; padding: 0; margin: 0;}
-
 		.list-menu{
 			height: 50px; border: 2px solid black;
 		}
@@ -22,9 +21,7 @@
 		.link-sub{
 			height: 50px; display: block; text-align: center; line-height: 50px;
 		}
-		.item-sub+.link-sub {
-			border-top: 2px solid black; 
-		}
+		.item-sub+.item-sub{ border-top: 2px solid black;}
 	</style>
 </head>
 <body>
@@ -45,8 +42,8 @@
 		$('.item-menu').click(function(){
 			$(this).children('.list-sub').toggle();
 		});
-		/*
-		버블링을 막아주는 메서드
+		/* 
+		버블링을 막아주는 메서드 : stopPropagation()
 		*/
 		$('.link-sub').click(function(e){
 			e.stopPropagation();

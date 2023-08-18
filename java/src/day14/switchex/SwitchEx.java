@@ -7,23 +7,28 @@ public class SwitchEx {
 		 * 없다는걸 보여주는 예제
 		 * case문에 break가 선택이지 필수가 아님
 		 * => break가 없는 경우 다음 case의 실행문으로 이동
-		 */
-		int menu = 1;
+		 * */
+		int menu = 2;
 		
 		switch(menu) {
-			
 		case 1:
 			String title = "제목1";
 			System.out.println(title);
-			break;//문법적으로 break가 필수가 아님, 그래서 다른 case에서 사용한 변수명은 다른 case에서 사용 불가
+			//break;//
 		case 2:
-			String title2 = "제목2";//title이 case 1에 있어서 선언이 안됩니다. => 그래서 title에서 title2로 바꿈
-			System.out.println(title2);//만약 case 1을 거치지 않고 오는 경우 title이란 변수가 실행이 안되기 때문에 에러 발생
-			                          //=> 여기도 마찬가지로 title을 title2로 변경   
+			String title2 = "제목2";//title이 case 1에 있어서 선언이 안됨
+			//case 2에서 title을 쓰면 에러 발생
+			//=> title을 쓰기 위해서는 case 1을 반드시 지나야 하는데,
+			//   menu가 2이어서 case2가 바로 실행된 경우는 case 1을 건너뛰고
+			//	 오기 때문에 title이 선언되지 않아서 에러 발생
+			//System.out.println(title);
+			System.out.println(title2);
 			break;
 		case 3:
 			break;
 		}
+		
+
 	}
 
 }

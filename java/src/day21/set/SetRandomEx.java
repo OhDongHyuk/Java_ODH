@@ -6,30 +6,33 @@ import java.util.HashSet;
 public class SetRandomEx {
 
 	public static void main(String[] args) {
-		/* 배열을 이용해서 1~9사이의 랜덤한 수 3개를 저장(중복되지 않은)*/
+		/* 배열을 이용해서 1~9사이의 랜덤한 수 3개를 저장(중복되지 않은) */
 		int arr[] = new int[3];
 		int count = 0;
 		int min = 1, max = 9;
+		
 		while(count < 3) {
 			int r = random(min, max);
 			int i;
-			for(i = 0; i < count; i++) {
+			
+			for(i = 0 ; i<count; i++) {
 				if(arr[i] == r) {
 					break;
 				}
 			}
-			//이 위치에서 i는 count
-			if(i == count) {//중복된 값이 없으면
+			if(i == count) {
 				arr[count++] = r;
 			}
 		}
 		System.out.print("[");
-		for(int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i] + (i == arr.length - 1?"":", "));
+		for(int i=0; i<arr.length; i++) {
+			System.out.print(arr[i] + (i == arr.length-1?"":", "));
 		}
 		System.out.println("]");
-		/* List을 이용해서 1~9사이의 랜덤한 수 3개를 저장(중복되지 않은)*/
+		
+		/* List를 이용해서 1~9사이의 랜덤한 수 3개를 저장(중복되지 않은) */
 		ArrayList<Integer> list = new ArrayList<>();
+		
 		while(list.size() < 3) {
 			int r = random(min, max);
 			if(!list.contains(r)) {
@@ -37,10 +40,10 @@ public class SetRandomEx {
 			}
 		}
 		System.out.println(list);
-		/* Set을 이용해서 1~9사이의 랜덤한 수 3개를 저장(중복되지 않은)*/
+		/* Set를 이용해서 1~9사이의 랜덤한 수 3개를 저장(중복되지 않은) */
 		HashSet<Integer> set = new HashSet<>();
 		
-		while(set.size()< 3) {
+		while(set.size() < 3) {
 			int r = random(min, max);
 			set.add(r);
 		}
@@ -53,37 +56,6 @@ public class SetRandomEx {
 			min = max;
 			max = tmp;
 		}
-		return (int)(Math.random()*(max - min + 1) + min);
+		return (int)(Math.random() * (max - min + 1)+min);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

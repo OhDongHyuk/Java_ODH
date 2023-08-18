@@ -5,10 +5,9 @@ public class MethodCallStackEx {
 	public static void main(String[] args) {
 		/* 함수(메소드) 호출 스택 예제 */
 		method1(1);
-		//method4(); //재귀 메소드를 잘못 작성한 경우 StackOverFlow가 발생
-		//a<->b 무한 티키타카 때에도 StackOverFlow가 발생
+		//method4();//재귀 메소드를 잘못 작성한 경우 StackOverFlow가 발생
 	}
-
+	
 	public static void method1(int a) {
 		System.out.println(a);
 		method2(a);
@@ -23,6 +22,10 @@ public class MethodCallStackEx {
 	public static void method4() {
 		System.out.println("a");
 		method4();
-	}	
-	
+	}
 }
+
+
+
+
+

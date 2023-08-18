@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>포트폴리오1</title>
+	<style>
+		.container{
+			width: 700px; height: 250px; border: 2px solid black;
+			padding: 10px; position: relative;
+		}
+		.item{
+			margin-left: 25px; width: 300px; margin-bottom: 5px;
+		}
+		.tA{
+			margin-left: 80px; width: 300px; height: 160px;
+		}
+		.upLF{
+			margin-left: 5px;
+		}
+		.btn{
+			margin-left: 140px; margin-top: 10px;
+		}
+		.label1{
+			text-decoration: none; text-align: center;
+			font-weight: bold; margin-left: 17px;
+		}
+		.label2{
+			text-decoration: none; text-align: center; margin-left: 20px;
+			font-weight: bold; position: absolute; left: 8px; top: 100px;
+		}
+		.label3{
+			text-decoration: none; text-align: center; margin-left: 5px;
+			font-weight: bold; 
+		}
+	</style>
+</head>
+<body>
+	<form action="insert.no" method="post" class="container" >		
+		<label for="input_id1" class="label1">제목</label>
+		<input type="text" name="title" id="input_id1" class="item" placeholder="제목을 입력하시오."><br>
+		<label for="input_id2" class="label2">내용</label>
+		<textarea name="content" class="tA" placeholder="내용을 입력하시오."></textarea><br>
+		<label for="input_id3" class="label3">첨부파일
+			<input type="file" name="uploadFile" class="upLF"><br>
+		</label>
+		<button class="btn">작성하기</button>
+	</form>
+</body>
+</html>

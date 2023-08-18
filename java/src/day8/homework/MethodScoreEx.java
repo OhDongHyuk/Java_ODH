@@ -1,75 +1,34 @@
 package day8.homework;
 
-import java.util.Scanner;
-
 public class MethodScoreEx {
 
 	public static void main(String[] args) {
-		double num1;
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Input score : ");
-		num1 = sc.nextDouble();
-		
-		System.out.println(num1 + " is " + isScore1(num1));
-		
-		
-		System.out.println(getGrade(num1));
-
+		/*성적을 입력받아 학점을 출력하는 코드를 작성하세요.*/
+		double score = 10;
+		System.out.println(getGrade(score));
 	}
-	
-	public static String isScore1(double num2) {
-    	if(num2 >= 4.0 && num2 <= 4.5) {
-    		return "A+";
-    	}
-    	else if(num2 >= 3.5 && num2 < 4.0) {
-    		return "A";
-    	}
-    	else if(num2 >= 3.0 && num2 < 3.5) {
-    		return "B+";
-    	}
-    	else if(num2 >= 2.5 && num2 < 3.0) {
-    		return "B";
-    	}
-    	else if(num2 >= 2.0 && num2 < 2.5) {
-    		return "C+";
-    	}
-    	else if(num2 >= 1.5 && num2 < 2.0) {
-    		return "C";
-    	}
-    	else if(num2 >= 1.0 && num2 < 1.5) {
-    		return "D+";
-    	}
-    	else if(num2 >= 0.5 && num2 < 1.0) {
-    		return "D";
-    	}
-    	else if(num2 >= 0.0 && num2 < 0.5) {
-    		return "F";
-    	}
-		else {
-			return "Wrong Score";
-		}
-				
-    }
-	
-	/**성적이 주어지면 학점을 알려주는 메소드
-	 * 매개변수 : 성적 => 실수 => double
+
+	/**성적이 주어지면 학점을 알려주는 메서드
+	 * 매개변수 : 성적 => 실수 => double score
 	 * 리턴타입 : 학점 => 문자열 => String
-	 * 메소드명 : getGrade
+	 * 메서드명 : getGrade
 	 */
 	public static String getGrade(double score) {
-		if(score > 100 || score <0) {
+		if(score > 100 || score < 0) {
 			return "Wrong score!";
 		}
 		/* 100점 => A
-		 * 90점 => A
-		 * 80점 => B
-		 * 70점 => C
-		 * 60점 => D
+		 * 90점대 => A
+		 * 80점대 => B
+		 * 70점대 => C
+		 * 60점대 => D
 		 * 그외 => F
 		 * */
-		int res = (int)(score/10); //앞자리 수에 따라 등급이 결정되기 때문에 score/10을 해준것
+		//성적이 몇점대인지 확인하기 위한 정수
+		//9가 나오면 90점대
+		int res = (int)(score/10);
 		switch(res) {
-		case 10:
+		case 10:	
 		case 9:
 			return "A";
 		case 8:
@@ -80,7 +39,14 @@ public class MethodScoreEx {
 			return "D";
 		default:
 			return "F";
+			
 		}
 	}
-
 }
+
+
+
+
+
+
+

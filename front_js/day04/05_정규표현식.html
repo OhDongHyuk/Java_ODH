@@ -10,7 +10,7 @@
 	<input type="text" id="id">
 	<div class="box"></div>
 	<script>
-		let regex = /^\d{5,8}/;
+		let regex = /\d{5,8}/;
 		$('#id').change(function(){
 			let text = $(this).val();
 			if(regex.test(text)){

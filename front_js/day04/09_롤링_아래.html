@@ -10,13 +10,13 @@
 			height: 50px; border: 3px solid black; overflow: hidden;
 		}
 		.list{
-			list-style: none; margin: 0; padding: 0; 
+			list-style: none; margin: 0; padding: 0;
 		}
 		.item{
 			height: 50px; background-color: yellow;
 		}
-		.bg-pink{ background: pink; }
-		.bg-orange{ background: orange; }
+		.bg-pink{ background: pink;}
+		.bg-orange{ background: orange;}
 	</style>
 </head>
 <body>
@@ -34,7 +34,7 @@
 		}, function(){
 			//롤링을 시작
 			id = rolling();
-		});	
+		});
 
 		let id = rolling();
 
@@ -44,11 +44,11 @@
 					return;
 				}
 				$('.item')
-				.last()
-				.detach()
-				.prependTo('.list')
-				.css('margin-top','-50px')
-				.animate({'margin-top' : '0'},1200);
+					.last()
+					.detach()
+					.prependTo('.list')
+					.css('margin-top', '-50px')
+					.animate({'margin-top':'0'},1200);
 			}, 1500);
 		}
 	</script>

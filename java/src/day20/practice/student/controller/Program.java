@@ -4,5 +4,5 @@ public interface Program {
 
 	void run();
 	void printMenu();
-	void runMenu(int Menu);
+	void runMenu(int menu);
 }

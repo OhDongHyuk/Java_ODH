@@ -15,25 +15,20 @@ public class MaxEx {
 		num2 = sc.nextInt();
 		
 		//큰 수를 max에 저장
-		//num1이 num2보다 크다거 같으면 max에 num1을 저장
+		//num1이 num2보다 크거나 같으면 max에 num1를 저장
 		if(num1 >= num2) {
 			max = num1;
 		}
-		
 		//아니면 max에 num2를 저장
 		else {
 			max = num2;
 		}
-		
-		
 		//max를 출력
-		System.out.println(num1 + " 와/과 " + num2 + " 중에 더 큰 수는 " + max + " 입니다.");
-		
-		max = 100;//??
+		System.out.println("The greater number of "+ num1 +" or "+ num2 +" is " + max);
+		max = 100;
 		max = num1 >= num2 ? num1 : num2;
-		System.out.println(num1 + " 와/과 " + num2 + " 중에 더 큰 수는 " + max + " 입니다.");
+		System.out.println("The greater number of "+ num1 +" or "+ num2 +" is " + max);
 		sc.close();
-
 	}
 
 }
