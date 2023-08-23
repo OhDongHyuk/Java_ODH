@@ -1,0 +1,40 @@
+package db.day2.board2.controller;
+
+import java.sql.Connection;
+import java.util.Scanner;
+
+public class BoardController {
+	
+	private Scanner sc;
+	
+	public BoardController(Connection con, Scanner sc) {
+		this.sc = sc;
+	}
+
+	public void run() {
+		// TODO Auto-generated method stub
+		int menu;
+		final int EXIT = 5;
+		do {
+			printMenu();
+			menu = sc.nextInt();
+			runMenu(menu);
+		}while(menu != EXIT);
+	}
+
+	private void runMenu(int menu) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void printMenu() {
+		System.out.println("=====게시판 메뉴=====");
+		System.out.println("1.게시글 등록");
+		System.out.println("2.게시글 수정");
+		System.out.println("3.게시글 삭제");
+		System.out.println("4.게시글 확인");
+		System.out.println("5.이전");
+		
+	}
+
+}

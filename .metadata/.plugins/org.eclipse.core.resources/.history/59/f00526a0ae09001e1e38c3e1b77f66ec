@@ -1,0 +1,71 @@
+package day10.practice;
+
+import java.util.Scanner;
+
+public class RectEx {
+
+	public static void main(String[] args) { //직사각형
+		
+		Pt1 pt11 = new Pt1();
+		pt11.print();
+		System.out.println("============");
+		pt11.move(2,30,5,9);
+		pt11.print();
+		System.out.println("============");
+		Pt1 pt12 = new Pt1(30,40,2,6);
+		pt12.print();
+		
+	}
+}
+class Pt1{
+	private int x, y, a, b;
+	
+	public Pt1() {}
+	
+	public Pt1(int x, int y, int a, int b) {
+		this.x = x;
+		this.y = y;
+		this.a = a;
+		this.b = b;
+	}
+
+	public double getX() {
+		return x;
+	}
+	public void setX(int x) {
+		this.x = x;
+	}
+	public double getY() {
+		return y;
+	}
+	public void setY(int y) {
+		this.y = y;
+	}
+	
+	public double getA() {
+		return a;
+	}
+	public void setA(int a) {
+		this.a = a;
+	}
+	public double getB() {
+		return b;
+	}
+	public void setB(int b) {
+		this.b = b;
+	}
+	
+	public void print() {
+		System.out.println("A = " + "" + x + "," + y + "pt");
+		System.out.println("B = " + "" + (x + a) + "," + y + "pt");
+		System.out.println("C = " + "" + x + "," + (y + b) + "pt");
+		System.out.println("D = " + "" + (x + a) + "," + (y + b) + "pt");
+	}
+	
+	public void move(int x, int y, int a, int b) {
+		this.x = x;
+		this.y = y;
+		this.a = a;
+		this.b = b;
+	}
+}

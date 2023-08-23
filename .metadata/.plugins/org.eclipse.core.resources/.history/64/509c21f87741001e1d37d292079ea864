@@ -1,0 +1,10 @@
+package kr.kh.app.service;
+
+public class MemberServiceImp implements MemberService {
+
+	private MemberDAO memberDao;
+	
+	public MemberServiceImp() {
+		
+	}
+}

@@ -1,0 +1,5 @@
+package kr.kh.app.vo;
+
+public class BoardVO {
+
+}

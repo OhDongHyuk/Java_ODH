@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>안녕하세요</h1>
+	<h2>반갑습니다</h2>
+	<!-- 서버에서 보낸 msg를 jsp에서 출력 -->
+	<h3><%=request.getAttribute("msg") %></h3>
+	<%
+		for(int i = 0; i<5; i++){
+	%>
+		<h4><%=1%></h4>		
+	<%	
+		}
+		
+	%>
+</body>
+</html>
