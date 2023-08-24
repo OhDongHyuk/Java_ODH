@@ -1,0 +1,20 @@
+package kr.kh.app.service;
+
+import kr.kh.app.dao.BoardDAO;
+import kr.kh.app.vo.BoardVO;
+
+public class BoardServiceImp implements BoardService{
+
+	private BoardDAO BoardDao;
+	
+	public BoardServiceImp() {
+		
+	}
+	
+	@Override
+	public boolean insertBoard(BoardVO board) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

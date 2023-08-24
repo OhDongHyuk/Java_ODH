@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>게시글 상세</h1>
+	<div>제복 : ${board.bo_title}</div>
+	<div>작성자 : ${board.bo_me_id}</div>
+	<a href="<c:url value='/list'/>">목록으로</a>
+</body>
+</html>
