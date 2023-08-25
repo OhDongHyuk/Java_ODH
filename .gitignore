@@ -27,3 +27,4 @@ replay_pid*
 .project
 .settings/
 meta-inf/
+/.metadata/
